@@ -6,7 +6,7 @@ const checkComplete = () => {
     return i;
 };
 
-//arrow function para listener
+//arrow function para listener en modulo
 //crear la funcion que será llamada al hacer click en el botón checkcomplete
 const completeTask = (event) => {
     

@@ -62,3 +62,4 @@ const creatTask = (evento) => {
 })*/
 
 btn.addEventListener('click',creatTask);
+
