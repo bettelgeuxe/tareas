@@ -22,8 +22,8 @@ export const addTask = (evento) =>{
       };
       //const taskList = [];
       //para almacenar en local storage no se crea arreglo sino:
-      //si no se agregan las lineas verticales se va null entocnes se envia el simbolo de arreglo
-      //las barritas indican que en caso que lo anterior sea null o indefinido, dar un formato por defecto
+      //las barritas o pipe son para indicar que si ya tiene info se comporte de una forma y si no inicie como arreglo vacío
+      //si la primera afirmación es true no entra a la segunda
       //se debe parsear ya que push no es de string 
     const taskList = JSON.parse(localStorage.getItem('tasks')) || [];
     //agregar al arreglo
