@@ -1,9 +1,12 @@
 import { addTask } from "./components/addTask.js";
+import { readTask } from "./components/readTasks.js";
 //IIFE inmediately invoked function expression
 const btn = document.querySelector("[data-form-btn]");
 //const input = document.querySelector("[data-form-input]");
 
 btn.addEventListener('click',addTask);
+
+readTask();
     /*
     const content = `<div>
               ${checkComplete()}

@@ -12,6 +12,10 @@ export const addTask = (evento) =>{
     const date = calendar.value;
     //Se agregó cdn librería moment parte inferior
     const dateFormat = moment(date).format('DD/MM/YYYY');
+
+    if(value === "" || date === ""){
+        return;
+    }
     input.value = '';
     //resetear fecha que queda con la última seleccionada
     calendar.value='';
@@ -37,39 +41,27 @@ export const addTask = (evento) =>{
     
   }
   
-const creatTask = ({value,dateFormat}) => {
+    export const creatTask = ({value,dateFormat}) => {
     const task = document.createElement("li");
-      task.classList.add('card');
-      
-      //crear la estructora parte por parte con createElement
+        task.classList.add('card');
+    //crear la estructora parte por parte con createElement
     const taskContent = document.createElement("div");
-      console.log(value,dateFormat);
-    
-      
-  
-      taskContent.appendChild(checkComplete());
+        taskContent.appendChild(checkComplete());
       //<span class="task">${value}</span>
-      const titleTask = document.createElement("span");
-      titleTask.classList.add("task");
-      titleTask.innerText = value;
-      taskContent.appendChild(titleTask);
-      const dateElement = document.createElement("span");
-      dateElement.innerHTML = dateFormat;
-       
-      
-      ///<i class="fas fa-trash-alt trashIcon icon"></i>`;
-      //const content = `
-        //  <i class="fas fa-trash-alt trashIcon icon"></i>`;
-  
+    const titleTask = document.createElement("span");
+        titleTask.classList.add("task");
+        titleTask.innerText = value;
+        taskContent.appendChild(titleTask);
+    const dateElement = document.createElement("span");
+        dateElement.innerHTML = dateFormat;
+        task.appendChild(taskContent);
+        task.appendChild(dateElement);
+        task.appendChild(deleteIcon());
+    ///<i class="fas fa-trash-alt trashIcon icon"></i>`;
+    //const content = `
+    //  <i class="fas fa-trash-alt trashIcon icon"></i>`;
     //task.innerHTML = content;
-  
-    task.appendChild(taskContent);
-    task.appendChild(dateElement);
-    task.appendChild(deleteIcon());
     return task;
-  
-    
-  
-  };
+};
   
   
