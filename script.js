@@ -1,52 +1,9 @@
-import checkComplete from "./components/checkComplete.js";
-import deleteIcon from "./components/deleteIcon.js";
-
+import { addTask } from "./components/addTask.js";
 //IIFE inmediately invoked function expression
 const btn = document.querySelector("[data-form-btn]");
-const input = document.querySelector("[data-form-input]");
+//const input = document.querySelector("[data-form-input]");
 
-
-const creatTask = (evento) => {
-    evento.preventDefault();
-    const input = document.querySelector("[data-form-input]");
-    const calendar = document.querySelector("[data-form-date");
-    
-    const value = input.value;
-    const date = calendar.value;
-    //Se agregó cdn librería moment parte inferior
-    const dateFormat = moment(date).format('DD/MM/YYYY');
-    console.log(dateFormat);
-    const list = document.querySelector("[data-list]");
-    const task = document.createElement("li");
-    task.classList.add('card');
-    input.value = '';
-    
-    
-    //crear la estructora parte por parte con createElement
-
-    const taskContent = document.createElement("div");
-    taskContent.appendChild(checkComplete());
-    //<span class="task">${value}</span>
-    const titleTask = document.createElement("span");
-    titleTask.classList.add("task");
-    titleTask.innerText = value;
-    taskContent.appendChild(titleTask);
-    const dateElement = document.createElement("span");
-    dateElement.innerHTML = dateFormat; 
-    
-    ///<i class="fas fa-trash-alt trashIcon icon"></i>`;
-    //const content = `
-      //  <i class="fas fa-trash-alt trashIcon icon"></i>`;
-
-  //task.innerHTML = content;
-
-  task.appendChild(taskContent);
-  task.appendChild(deleteIcon());
-
-  list.appendChild(task);
-
-};
-
+btn.addEventListener('click',addTask);
     /*
     const content = `<div>
               ${checkComplete()}
@@ -69,5 +26,7 @@ const creatTask = (evento) => {
     
 })*/
 
-btn.addEventListener('click',creatTask);
+//para implementar la terea add Task  se quita creatTask
+//btn.addEventListener('click',creatTask);
+
 
