@@ -9,7 +9,13 @@ const input = document.querySelector("[data-form-input]");
 const creatTask = (evento) => {
     evento.preventDefault();
     const input = document.querySelector("[data-form-input]");
+    const calendar = document.querySelector("[data-form-date");
+    
     const value = input.value;
+    const date = calendar.value;
+    //Se agregó cdn librería moment parte inferior
+    const dateFormat = moment(date).format('DD/MM/YYYY');
+    console.log(dateFormat);
     const list = document.querySelector("[data-list]");
     const task = document.createElement("li");
     task.classList.add('card');
@@ -25,6 +31,8 @@ const creatTask = (evento) => {
     titleTask.classList.add("task");
     titleTask.innerText = value;
     taskContent.appendChild(titleTask);
+    const dateElement = document.createElement("span");
+    dateElement.innerHTML = dateFormat; 
     
     ///<i class="fas fa-trash-alt trashIcon icon"></i>`;
     //const content = `
