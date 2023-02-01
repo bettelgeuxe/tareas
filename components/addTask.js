@@ -19,10 +19,15 @@ export const addTask = (evento) =>{
     input.value = '';
     //resetear fecha que queda con la última seleccionada
     calendar.value='';
+
+    const complete = false;
+
     //crear un objeto para almacenar la tarea y la fecha
     const taskObj = {
         value,
         dateFormat,
+        complete,
+        id: uuid.v4()
       };
 
       list.innerHTML = '';
@@ -44,12 +49,18 @@ export const addTask = (evento) =>{
     
   }
   
-    export const creatTask = ({value,dateFormat}) => {
+    export const creatTask = ({value,dateFormat,complete,id}) => {
     const task = document.createElement("li");
         task.classList.add('card');
     //crear la estructora parte por parte con createElement
     const taskContent = document.createElement("div");
-        taskContent.appendChild(checkComplete());
+      console.log(complete); 
+
+      //Para dar un identificador unico usaremos librería externa uuid cdn
+      if(complete){
+        console.log("completado")
+      }
+        taskContent.appendChild(checkComplete(id));
       //<span class="task">${value}</span>
     const titleTask = document.createElement("span");
         titleTask.classList.add("task");

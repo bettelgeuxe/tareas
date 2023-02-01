@@ -1,14 +1,14 @@
 //crear el botón
-const checkComplete = () => {
+const checkComplete = (id) => {
     const i = document.createElement("i");
     i.classList.add('far','fa-check-square','icon');
-    i.addEventListener('click',completeTask)
+    i.addEventListener('click',(evento => completeTask(evento,id)))
     return i;
 };
 
 //arrow function para listener en modulo
 //crear la funcion que será llamada al hacer click en el botón checkcomplete
-const completeTask = (event) => {
+const completeTask = (event,id) => {
     
     const element = event.target;
 
@@ -19,6 +19,7 @@ const completeTask = (event) => {
     element.classList.toggle('fas');
     element.classList.toggle('completeIcon');
     element.classList.toggle('far');
+    console.log("check id", id);
 };
 
 export default checkComplete;
