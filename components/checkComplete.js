@@ -20,6 +20,11 @@ const completeTask = (event,id) => {
     element.classList.toggle('completeIcon');
     element.classList.toggle('far');
     console.log("check id", id);
+    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    const index = tasks.findIndex( item => item.id === id )
+    console.log(index);
+    tasks[index]["complete"] = !tasks[index]["complete"];
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
 export default checkComplete;

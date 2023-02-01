@@ -58,7 +58,7 @@ export const addTask = (evento) =>{
 
       //Para dar un identificador unico usaremos librería externa uuid cdn
       if(complete){
-        console.log("completado")
+        console.log("completada")
       }
         taskContent.appendChild(checkComplete(id));
       //<span class="task">${value}</span>
