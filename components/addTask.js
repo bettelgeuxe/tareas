@@ -67,6 +67,7 @@ export const addTask = (evento) =>{
         check.classList.toggle('far');
         
       }
+      
         taskContent.appendChild(check);
       //<span class="task">${value}</span>
     const titleTask = document.createElement("span");
