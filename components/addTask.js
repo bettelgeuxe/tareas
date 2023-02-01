@@ -1,6 +1,6 @@
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
-
+import { readTask } from "./readTasks.js";
 
 export const addTask = (evento) =>{
     evento.preventDefault();
@@ -24,6 +24,8 @@ export const addTask = (evento) =>{
         value,
         dateFormat,
       };
+
+      list.innerHTML = '';
       //const taskList = [];
       //para almacenar en local storage no se crea arreglo sino:
       //las barritas o pipe son para indicar que si ya tiene info se comporte de una forma y si no inicie como arreglo vacío
@@ -35,8 +37,9 @@ export const addTask = (evento) =>{
     //almacenar en local storage
     localStorage.setItem("tasks", JSON.stringify(taskList));
 
-    const task = creatTask(taskObj);
-    list.appendChild(task);
+    readTask();
+    //const task = creatTask(taskObj);
+    //list.appendChild(task);
 
     
   }
