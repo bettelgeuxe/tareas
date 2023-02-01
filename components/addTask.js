@@ -61,7 +61,7 @@ export const addTask = (evento) =>{
       const check = checkComplete(id);
 
       if(complete){
-        console.log("completada")
+        
         check.classList.toggle('fas');
         check.classList.toggle('completeIcon');
         check.classList.toggle('far');
@@ -77,7 +77,7 @@ export const addTask = (evento) =>{
         dateElement.innerHTML = dateFormat;
         task.appendChild(taskContent);
         task.appendChild(dateElement);
-        task.appendChild(deleteIcon());
+        task.appendChild(deleteIcon(id));
     ///<i class="fas fa-trash-alt trashIcon icon"></i>`;
     //const content = `
     //  <i class="fas fa-trash-alt trashIcon icon"></i>`;
